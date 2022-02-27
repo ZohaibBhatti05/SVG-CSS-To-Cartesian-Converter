@@ -20,6 +20,7 @@ namespace SVGQuadConverter
 
         private void btnConvert_Click(object sender, EventArgs e)
         {
+            txtOutput.Clear();
             string SVG = txtSVG.Text;
             string CSS = txtCSS.Text;
 
@@ -55,14 +56,11 @@ namespace SVGQuadConverter
         {
             Match match = CoordMatches[i];
             string g1 = match.Groups[1].Value;
-            g1.Replace(".000", ".0");
             string g2 = match.Groups[2].Value;
-            g2.Replace(".000", ".0");
-
             double ig1 = double.Parse(g1); double ig2 = double.Parse(g2);
             ig1 += Left; ig2 += Top;
 
-            return string.Format("{0}, {1},{2}", ig1, ig2, Environment.NewLine);
+            return string.Format("{0}.0, {1}.0,{2}", ig1, ig2, Environment.NewLine);
         }
     }
 }

@@ -125,7 +125,7 @@ namespace SVGQuadConverter
             this.Controls.Add(this.txtCSS);
             this.Controls.Add(this.txtSVG);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "SVG CSS to Coordinates";
             this.ResumeLayout(false);
             this.PerformLayout();
 
